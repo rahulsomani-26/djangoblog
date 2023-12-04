@@ -4,6 +4,7 @@ from decouple import config
 
 
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -12,7 +13,7 @@ print('Your secret key = {}'.format(SECRET_KEY))
 
 DEBUG = config('DEBUG',cast=bool)
 
-ALLOWED_HOSTS= config('ALLOWED_HOST')
+ALLOWED_HOSTS= []
 
 # Application definition
 
@@ -106,6 +107,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT= BASE_DIR / 'static'
 STATICFILES_DIRS = ['blog/static','djangoallfeaturesproject/static']
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR /'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
